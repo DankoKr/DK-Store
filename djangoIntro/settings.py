@@ -39,12 +39,13 @@ INSTALLED_APPS = [
     'playground',
     'store',
     'tags',
-    "debug_toolbar",
+    'debug_toolbar',
+    'likes',
 ]
 
 INTERNAL_IPS = [
     # ...
-    "127.0.0.1",
+    '127.0.0.1',
     # ...
 ]
 
