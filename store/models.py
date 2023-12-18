@@ -14,8 +14,9 @@ class Collection(models.Model):
 
 class Product(models.Model):
     title = models.CharField(max_length=255)
+    slug = models.SlugField(null=True)
     description = models.TextField()
-    price = models.DecimalField(max_digits=6, decimal_places=2)
+    unit_price = models.DecimalField(max_digits=6, decimal_places=2)
     inventrory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
     # Protect -> if collection is deleted the product won't
@@ -59,6 +60,7 @@ class Order(models.Model):
 class Address(models.Model):
     street = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
+    zip = models.CharField(max_length=10, null=True)
     # Customer as a PK, auto ID is cancelled
     # CASCADE -> delete when the Customer is deleted
     customer = models.OneToOneField(Customer, on_delete=models.CASCADE ,primary_key=True)
