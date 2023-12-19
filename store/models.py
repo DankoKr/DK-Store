@@ -17,7 +17,7 @@ class Product(models.Model):
     slug = models.SlugField(null=True)
     description = models.TextField()
     unit_price = models.DecimalField(max_digits=6, decimal_places=2)
-    inventrory = models.IntegerField()
+    inventory = models.IntegerField()
     last_update = models.DateTimeField(auto_now=True)
     # Protect -> if collection is deleted the product won't
     collection = models.ForeignKey(Collection, on_delete=models.PROTECT)

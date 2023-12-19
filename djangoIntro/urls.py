@@ -17,6 +17,8 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 
+admin.site.site_header = 'DK-Store Admin'
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     # devine the endpoint and with the include function add the urls configuration for it
